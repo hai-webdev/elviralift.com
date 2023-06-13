@@ -36,6 +36,7 @@
           <li class="nav-item" v-for="nav in navs" :key="nav.id">
             <div class="title">{{nav.name}}</div>
             <template v-if="nav.son">
+              
               <router-link v-for="n in nav.son" :key="n.id" class="link"  :to="{ name:  n.filename || nav.filename, params: { id: n.scode } }">{{n.name}}</router-link>
             </template>
           </li>

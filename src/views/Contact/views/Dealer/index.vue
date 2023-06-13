@@ -28,7 +28,7 @@
           <input type="text" placeholder="经销商名称" />
         </div>
         <div class="info">为您找到{{ jxsList.length }}个经销商</div>
-     
+
         <ul class="dealer-list">
           <li
             class="dealer-item"
@@ -41,23 +41,48 @@
               <div class="title">
                 {{ (index + 1).toString().padStart(2, 0) }} {{ item.title }}
               </div>
-              
-                <div v-if="$route.fullPath === '/contact/dealer'" class="cont" v-html="item.ext_cont"></div>
-                <div v-else-if="$route.fullPath === '/contact/join'" class="cont" v-html="item.ext_join"></div>
+
+              <div
+                v-if="$route.fullPath === '/contact/dealer'"
+                class="cont"
+                v-html="item.ext_cont"
+              ></div>
+              <div
+                v-else-if="$route.fullPath === '/contact/join'"
+                class="cont"
+                v-html="item.ext_join"
+              ></div>
             </div>
           </li>
         </ul>
       </div>
 
-      <div class="map-address" v-if="mapInfo.id">
+      <div class="map-address" v-if="mapInfo.id && mapShow">
         <div class="title">{{ mapInfo.title }}</div>
         <div class="cont">
-            <p v-if="$route.fullPath === '/contact/dealer'" v-html="mapInfo.ext_cont"></p>
-            <p v-else-if="$route.fullPath === '/contact/join'" v-html="mapInfo.ext_join"></p>
+          <p
+            v-if="$route.fullPath === '/contact/dealer'"
+            v-html="mapInfo.ext_cont"
+          ></p>
+          <p
+            v-else-if="$route.fullPath === '/contact/join'"
+            v-html="mapInfo.ext_join"
+          ></p>
         </div>
         <div class="btns">
-          <router-link :to="{name:'Reservation'}" class="btn">预约试乘</router-link>
-          <a :href="mapInfo.ext_route" v-if="mapInfo.ext_route" :target="mapInfo.ext_route  && '_blank'" class="btn black">查看路线</a>
+          <router-link
+            v-if="$route.params.id === '24'"
+            :to="{ name: 'Reservation' }"
+            class="btn"
+            >预约试乘</router-link
+          >
+          <a
+            :href="mapInfo.ext_route"
+            v-if="mapInfo.ext_route"
+            :target="mapInfo.ext_route && '_blank'"
+            class="btn black"
+            >查看路线</a
+          >
         </div>
       </div>
 
@@ -68,6 +93,7 @@
         :address="address"
         :contentId="mapId"
         @getCurrentCity="getCurrentCity"
+        @touch="handleMapTouch"
       />
     </div>
   </div>
@@ -87,17 +113,18 @@ export default {
       address: "",
       mapId: null,
       mapInfo: {},
-      jxsId:null
+      jxsId: null,
+      mapShow:false,
     };
   },
   async created() {
     let citys = [];
-    if(this.$route.name === "Dealer"){
+    if (this.$route.name === "Dealer") {
       this.jxsId = 24;
-    } else if(this.$route.name === "Join"){
+    } else if (this.$route.name === "Join") {
       this.jxsId = 26;
     }
-    if(!this.jxsId){
+    if (!this.jxsId) {
       return [];
     }
     const province = await this.$api.getNav(this.jxsId);
@@ -130,7 +157,7 @@ export default {
           }
         }
       }
-      if(!currentCityObj.length){
+      if (!currentCityObj.length) {
         this.jxsList = [];
         return;
       }
@@ -164,15 +191,20 @@ export default {
       }
     },
     async $route() {
+      this.jxsList = [];
+      this.mapInfo = {};
+      this.currentCity = null;
+      this.address = null;
+      this.mapId = null;
       let citys = [];
-      if(this.$route.name === "Dealer"){
-      this.jxsId = 24;
-    } else if(this.$route.name === "Join"){
-      this.jxsId = 26;
-    }
-    if(!this.jxsId){
-      return [];
-    }
+      if (this.$route.name === "Dealer") {
+        this.jxsId = 24;
+      } else if (this.$route.name === "Join") {
+        this.jxsId = 26;
+      }
+      if (!this.jxsId) {
+        return [];
+      }
       const province = await this.$api.getNav(this.jxsId);
       if (province && province.data) {
         citys = province.data.map((item) => ({
@@ -193,6 +225,9 @@ export default {
     },
   },
   methods: {
+    handleMapTouch(mapShow){
+      this.mapShow = mapShow;
+    },
     getCurrentCity(city) {
       this.currentCity = city;
     },
@@ -200,6 +235,7 @@ export default {
     selectAddress(item) {
       if (item) {
         this.mapInfo = item;
+        this.mapShow = true;
       }
       if (item.ext_address) {
         this.address = item.ext_address;

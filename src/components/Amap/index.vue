@@ -33,7 +33,7 @@ export default {
     async mapRender() {
       this.placeSearch = await new this.AMap.PlaceSearch({
         map: this.map,
-        center:[116.436144,39.855115],
+        center: [116.436144, 39.855115],
         panel: "panel", // 结果列表将在此容器中进行展示。
         city: this.$props && this.$props.city ? this.$props.city : "", // 兴趣点城市
         autoFitView: true, // 是否自动调整地图视野使绘制的 Marker点都处于视口的可见范围
@@ -45,6 +45,7 @@ export default {
       } else {
         this.showCityInfo(this.AMap);
       }
+      this.mapEvent();
     },
     async initMap() {
       this.map = new this.AMap.Map(this.$refs["amap-container"], {
@@ -73,6 +74,25 @@ export default {
         }
       });
     },
+    mapMovestart() {
+      this.$emit("touch", true);
+    },
+    mapMove() {
+      this.$emit("touch", false);
+    },
+    mapMoveend() {
+      this.$emit("touch", false);
+    },
+    mapEvent() {
+      this.map.on("dragstart", this.mapMovestart);
+      this.map.on("dragging", this.mapMove);
+      this.map.on("dragend", this.mapMoveend);
+    },
+  },
+  deactivated() {
+    this.map.off("dragstart", this.mapMovestart);
+    this.map.off("dragging", this.mapMove);
+    this.map.off("dragend", this.mapMoveend);
   },
   async mounted() {
     this.AMap = await AMapLoader.load({
@@ -80,6 +100,7 @@ export default {
       version: "2.0", // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
       plugins: ["AMap.AutoComplete", "AMap.PlaceSearch", "AMap.CitySearch"], // 需要使用的的插件列表，如比例尺'AMap.Scale'等
     });
+
     this.initMap();
   },
   watch: {
