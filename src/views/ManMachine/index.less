@@ -1,0 +1,75 @@
+.man-machine-container {
+  width: 100%;
+  display: flex;
+}
+.left-layout {
+  width: calc(100% - 316px);
+  background-image: linear-gradient(180deg, #262729, #515256);
+  padding: 82px 50px 82px 82px;
+  box-sizing: border-box;
+  .pro-box {
+    display: flex;
+    justify-content: space-between;
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .top {
+        margin-bottom: 50px;
+      }
+    }
+    .right {
+      padding: 0 20px;
+    }
+  }
+}
+.right-layout {
+  width: 316px;
+  position: relative;
+  .text {
+    position: absolute;
+    padding: 80px 40px 20px 20px;
+    box-sizing: border-box;
+    .title-box {
+      text-align: right;
+      color: #fff;
+      margin-bottom: 150px;
+      .en-title {
+        font-family: impact;
+        p {
+          font-size: 40px;
+          span {
+            font-size: 24px;
+            display: block;
+          }
+        }
+      }
+      .cn-title {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+    }
+    .info-list{
+        width: 68%;
+        .info-item{
+            display: flex;
+            color:#fff;
+            margin-bottom: 40px;
+            .num{
+                font-family: impact;
+                font-weight: 100;
+                font-size: 22px;
+                margin-right: 12px;
+            }
+            p{
+                font-size: 15px;
+                line-height: 1.7;
+                text-align: justify;
+            }
+        }
+    }
+  }
+}
+
+@import "./768.less" screen and (max-width:1080px);

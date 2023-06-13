@@ -1,0 +1,38 @@
+.content-container {
+  .content {
+    width: calc(100% - 20px);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .title-box {
+      margin-bottom: 20px;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: calc(50% - 70px);
+        height: 1px;
+      }
+      span {
+        font-size: 22px;
+      }
+    }
+    .bg-box {
+      a {
+        position: absolute;
+        left: 20px;
+        font-size: 20px;
+        letter-spacing: 0;
+      }
+    }
+    .cont {
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 14px;
+      line-height: 1.7;
+      .weight {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+    }
+  }
+}

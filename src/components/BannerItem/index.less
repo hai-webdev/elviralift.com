@@ -1,0 +1,71 @@
+.banner-item-container {
+  position: relative;
+  .bg {
+    width: 100%;
+    display: block;
+  }
+  .banner-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text {
+      z-index: 2;
+      color: #fff;
+      .title {
+        font-size: 54px;
+        margin-bottom: 30px;
+        font-family: "dbs";
+      }
+      .desc {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+      .link {
+        display: flex;
+        width: 150px;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 14px;
+        color: #fff;
+        border: 1px solid #fff;
+        justify-content: center;
+        align-items: center;
+      }
+      &.black {
+        color: #333;
+        .link {
+          color: #333;
+          border: 1px solid #333;
+          &:hover {
+            background-color: #333;
+            border: 1px solid #333;
+            color: #fff;
+          }
+        }
+      }
+      &.white {
+        color: #fff;
+        .link {
+          color: #fff;
+          border: 1px solid #fff;
+          &:hover {
+            background-color: #fff;
+            border: 1px solid #fff;
+            color: #333;
+          }
+        }
+      }
+    }
+    .img {
+      max-height: 100%;
+    }
+  }
+}
+
+@import "./768.less" screen and (max-width: 768px);

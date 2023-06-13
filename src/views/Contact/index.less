@@ -1,0 +1,55 @@
+.contact-container{
+  width: 100%;
+}
+.text-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+  width: 90%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding-top: 120px;
+  .title {
+    font-size: 56px;
+    font-family: "dbs";
+    margin-bottom: 32px;
+  }
+  .desc {
+    width: 780px;
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 75px;
+  }
+  .btns {
+    .btn {
+      width: 150px;
+      height: 44px;
+      margin-right: 20px;
+      border: 1px solid #fff;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 22px;
+      color: #fff;
+      margin-bottom: 10px;
+      &.on,
+      &:hover {
+        background-color: #fff;
+        color: #333;
+      }
+      &.on:hover {
+        border: 1px solid #fff;
+      background-color: transparent;
+        color: #fff;
+      }
+    }
+  }
+}
+.bg {
+  position: relative;
+  width: 100%;
+}
+
+@import "./768.less" screen and (max-width:1080px);

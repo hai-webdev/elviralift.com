@@ -1,0 +1,133 @@
+.interconnection-container {
+  img {
+    max-width: 100%;
+  }
+  .banner-container {
+    width: 100%;
+    position: relative;
+    padding: 120px;
+    box-sizing: border-box;
+    .text-box {
+      width: 55%;
+      position: relative;
+      z-index: 2;
+      .title-box {
+        margin-bottom: 80px;
+        h1,
+        h2 {
+          font-family: impact;
+          color: #3e3a39;
+          span {
+            color: #b39978;
+            margin-right: 10px;
+          }
+        }
+        h1 {
+          font-size: 48px;
+        }
+        h2 {
+          font-size: 34px;
+        }
+        .cn-title {
+          margin-top: 26px;
+          font-size: 38px;
+          line-height: 1;
+        }
+      }
+      .icon-list {
+        display: flex;
+        margin-bottom: 80px;
+        .icon-item {
+          margin-right: 10px;
+          &:last-child {
+            margin-right: 0;
+          }
+          .icon {
+            width: 88px;
+            height: 88px;
+            display: block;
+            margin: 0 auto 13px;
+          }
+          .text {
+            text-align: center;
+            p {
+              font-size: 12px;
+              margin-bottom: 5px;
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+      .title {
+        font-size: 38px;
+        font-family: "dbs";
+        color: #b39978;
+        letter-spacing: 5px;
+        margin-bottom: 45px;
+      }
+      .desc {
+        font-size: 22px;
+        line-height: 1.7;
+        width: 75%;
+        text-align: justify;
+      }
+    }
+    .img {
+      position: absolute;
+      z-index: 1;
+      bottom: 60px;
+      right: 120px;
+      max-width: 45%;
+    }
+  }
+  .list {
+    .item {
+      padding: 100px;
+      border-top: 1px solid #666;
+      display: flex;
+      align-items: center;
+      &:nth-child(2n + 2){
+        flex-direction: row-reverse;
+      }
+      .img {
+        width: 65%;
+      }
+      .text {
+        width: 35%;
+        padding: 0 3%;
+        box-sizing: border-box;
+        .title {
+          font-size: 50px;
+          font-family: "dbs";
+          color: #b39978;
+          margin-bottom: 50px;
+        }
+        .desc {
+          font-size: 24px;
+          line-height: 2;
+          color: #555;
+        }
+      }
+      &.bg{
+        padding: 0;
+        .img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .text{
+            position: absolute;
+            left: 120px;
+            .title,
+            .desc{
+                color:#fff;
+            }
+        }
+      }
+    }
+  }
+}
+
+@import "./768.less" screen and (max-width: 768px);

@@ -1,0 +1,102 @@
+import Mock from "mockjs";
+import banner1 from "@/assets/images/home/banner1.jpg";
+import banner2 from "@/assets/images/home/banner1.jpg";
+import banner3 from "@/assets/images/home/banner1.jpg";
+import banner4 from "@/assets/images/home/banner1.jpg";
+import banner5 from "@/assets/images/home/banner1.jpg";
+import pro1 from "@/assets/images/home/pro1.jpg";
+import pro2 from "@/assets/images/home/pro1.jpg";
+import pro3 from "@/assets/images/home/pro1.jpg";
+import pro4 from "@/assets/images/home/pro1.jpg";
+import pro5 from "@/assets/images/home/pro1.jpg";
+Mock.mock(/^\/api\.php\/cms\/slide\/gid\/\d+\/num\/\d+$/, "get", {
+  code: 1,
+  "rowtotal|5": 1,
+  "data": [
+    {
+      "id": 1,
+      acode: "cn",
+      gid: "1",
+      pic: banner1,
+      wappic: pro1,
+      link: "@url('http')",
+      title: "经典传承",
+      subtitle: "水墨丹青 ELC-305",
+      description: "@cparagraph(3,7)",
+      sorting: "255",
+      create_user: "admin",
+      update_user: "admin",
+      create_time: "@now",
+      update_time: "@now",
+      status: "1",
+    },
+    {
+      "id": 2,
+      acode: "cn",
+      gid: "1",
+      pic: banner2,
+      wappic: pro2,
+      link: "@url('http')",
+      title: "潮流涌进",
+      subtitle: "浪舞银河 ELC-501",
+      description: "@cparagraph(3,7)",
+      sorting: "255",
+      create_user: "admin",
+      update_user: "admin",
+      create_time: "@now",
+      update_time: "@now",
+      status: "1",
+    },
+    {
+      "id": 3,
+      acode: "cn",
+      gid: "1",
+      pic: banner3,
+      wappic: pro3,
+      link: "@url('http')",
+      title: "晶莹清澈",
+      subtitle: "静谧流光ELC-601",
+      description: "@cparagraph(3,7)",
+      sorting: "255",
+      create_user: "admin",
+      update_user: "admin",
+      create_time: "@now",
+      update_time: "@now",
+      status: "1",
+    },
+    {
+      "id": 4,
+      acode: "cn",
+      gid: "1",
+      pic: banner4,
+      wappic: pro4,
+      link: "@url('http')",
+      title: "赋新未来",
+      subtitle: "渊清玉絜 ELC-705",
+      description: "@cparagraph(3,7)",
+      sorting: "255",
+      create_user: "admin",
+      update_user: "admin",
+      create_time: "@now",
+      update_time: "@now",
+      status: "1",
+    },
+    {
+      "id": 5,
+      acode: "cn",
+      gid: "1",
+      pic: banner5,
+      wappic: pro5,
+      link: "@url('http')",
+      title: "摩登秀",
+      subtitle: "流光溢彩 ELC-801",
+      description: "@cparagraph(3,7)",
+      sorting: "255",
+      create_user: "admin",
+      update_user: "admin",
+      create_time: "@now",
+      update_time: "@now",
+      status: "1",
+    },
+  ],
+});

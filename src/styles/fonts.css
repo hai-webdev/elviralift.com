@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "impact";
+    src: url("../assets/fonts/impact/impact.eot"); /* IE9 Compat Modes */
+    src: url("../assets/fonts/impact/impact.eot?#iefix") format("embedded-opentype"),
+      /* IE6-IE8 */ url("../assets/fonts/impact/impact.woff2") format("woff2"),
+      /* Super Modern Browsers */ url("../assets/fonts/impact/impact.woff") format("woff"),
+      /* Pretty Modern Browsers */ url("../assets/fonts/impact/impact.ttf") format("truetype"),
+      /* Safari, Android, iOS */ url("../assets/fonts/impact/impact.svg#svgFontName") format("svg"); /* Legacy iOS */
+  }
+@font-face {
+    font-family: "dbs";
+    src: url("../assets/fonts/dbs/dbs.eot"); /* IE9 Compat Modes */
+    src: url("../assets/fonts/dbs/dbs.eot?#iefix") format("embedded-opentype"),
+      /* IE6-IE8 */ url("../assets/fonts/dbs/dbs.woff2") format("woff2"),
+      /* Super Modern Browsers */ url("../assets/fonts/dbs/dbs.woff") format("woff"),
+      /* Pretty Modern Browsers */ url("../assets/fonts/dbs/dbs.ttf") format("truetype"),
+      /* Safari, Android, iOS */ url("../assets/fonts/dbs/dbs.svg#svgFontName") format("svg"); /* Legacy iOS */
+  }

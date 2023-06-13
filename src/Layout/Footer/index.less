@@ -1,0 +1,87 @@
+.footer-container {
+  height: 278px;
+  background-color: #333;
+  .foot-box {
+    width: 90%;
+    height: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding-top: 28px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    .left-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 150px;
+      .logo {
+        display: block;
+        height: 60px;
+        margin-bottom: 30px;
+        img {
+          display: block;
+          height: 100%;
+        }
+      }
+      .icon-list {
+        display: flex;
+        .icon-item {
+          position: relative;
+          margin-right: 31px;
+          &:last-child{
+            margin-right: 0;
+          }
+          .icon {
+            width: 41px;
+            height: 41px;
+          }
+          .show {
+            display: none;
+            position: absolute;
+            padding-top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            img {
+              width: 78px;
+            }
+          }
+          &:hover {
+            .show {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .right-layout{
+        flex:1;
+        .nav-list{
+            display: flex;
+            .nav-item{
+                width: 25%;
+                text-align: center;
+                .title,
+                .link{
+                    color:#fff;
+                    display: block;
+                }
+                .title{
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                }
+                .link{
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                    opacity: 0.7;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+  }
+}
+
+@import "./768.less" screen and (max-width:1080px);

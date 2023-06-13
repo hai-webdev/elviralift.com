@@ -1,0 +1,68 @@
+.housekeep-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .left-layout {
+    width: 100%;
+    height: auto;
+    padding: 25px 15px;
+    .title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .nav-list {
+      display: flex;
+      flex-wrap: wrap;
+      .nav-item {
+        flex-wrap: wrap;
+        width: 25%;
+        font-size: 14px;
+        color: #fff;
+        padding: 8px 0;
+        padding-left: 0;
+        position: relative;
+        box-sizing: border-box;
+        text-align: center;
+        &.on {
+          &::before {
+            height:1px;
+            width: 50px;
+            left: 50%;
+            bottom: 0;
+            top: auto;
+            transform: translateX(-50%) translateY(0);
+          }
+        }
+      }
+    }
+  }
+  .right-layout {
+    flex: 1 0 auto;
+    width: 100%;
+    .banner {
+      height: 180px;
+      .bg {
+        position: absolute;
+      }
+      .title-box {
+        bottom: 15px;
+        left: 15px;
+        width: calc(100% - 30px);
+        .title {
+          margin-bottom: 10px;
+          font-size: 20px;
+        }
+        .desc {
+          font-size: 14px;
+        }
+      }
+    }
+    .content {
+      padding: 15px;
+      box-sizing: border-box;
+      /deep/img {
+        max-width: 100%;
+      }
+    }
+  }
+}

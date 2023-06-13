@@ -1,0 +1,125 @@
+.contact-container {
+  height: auto;
+  .contact-box {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+    .left-layout,
+    .center-layout,
+    .right-layout {
+      width: 100%;
+    }
+    .left-layout {
+      margin-bottom: 20px;
+      .title {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      .subtitle {
+        font-size: 16px;
+      }
+    }
+    .center-layout {
+      justify-content: center;
+      margin-bottom: 30px;
+      img {
+        max-height: 200px;
+      }
+    }
+    .right-layout {
+      color: #fff;
+      p {
+        margin-bottom: 12px;
+      }
+      select,
+      input[type="text"] {
+        width: 100%;
+        height: 26px;
+        box-sizing: border-box;
+      }
+
+      .sex-box {
+        label {
+          margin-right: 20px;
+          i {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+      label {
+        font-size: 12px;
+        i {
+          width: 12px;
+          height: 12px;
+        }
+      }
+      .prior-box {
+        margin-top: 5px;
+      }
+      .privacy-policy {
+        display: flex;
+        justify-content: center;
+        cursor: auto;
+        margin-top: 24px;
+        margin-bottom: 20px;
+        i {
+          width: 12px;
+          height: 12px;
+          margin-right: 5px;
+        }
+      }
+      .pre-book {
+        width: 100%;
+        height: 36px;
+        border-radius: 21px;
+      }
+      .reservation-success {
+        background-color: #1f1f1f;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        padding: 25px;
+        .title {
+          font-size: 24px;
+          line-height: 1;
+          font-family: "dbs";
+          margin-bottom: 15px;
+        }
+        .desc {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+        .hr {
+          width: 100%;
+          height: 1px;
+          background-color: #080808;
+          margin: 15px 0;
+        }
+        .address {
+          font-size: 14px;
+          line-height: 1.8;
+          margin-bottom: 28px;
+        }
+        .btns {
+          display: flex;
+          justify-content: flex-start;
+          .btn {
+            width: 100px;
+            height: 36px;
+            font-size: 12px;
+            &.other {
+              background-color: #fff;
+              color: #1f1f1f;
+              margin-right: 5px;
+            }
+            &.to-home {
+              background-color: #3e3a39;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
